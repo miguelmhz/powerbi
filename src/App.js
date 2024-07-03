@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import PowerBIReport from './PowerBIReport';
 
-function App() {
+const App = () => {
+  // Información de configuración del informe
+  const accessToken = 'Tu_Clave_de_Acceso';
+  const embedUrl = 'https://app.powerbi.com/reportEmbed';
+  const reportId = 'Tu_ID_de_Informe';
+  const urlJSON = 'https://saasprueba.operaria.co/api/powerbi/rotations/02/2024';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Panel de Power BI </h1>
+      <PowerBIReport 
+        accessToken={accessToken}
+        embedUrl={embedUrl}
+        reportId={reportId}
+        urlJSON={urlJSON}
+      />
     </div>
   );
-}
+};
 
 export default App;
